@@ -33,4 +33,8 @@ export default createGlobalStyle`
     cursor:pointer;
   }
 
+  #root{
+    height:100%;
+  }
+
 `;

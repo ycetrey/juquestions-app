@@ -3,21 +3,30 @@ import { shade } from 'polished';
 import signInBackgroundImg from '../../assets/sign-in-background.jpg';
 
 export const Container = styled.div`
-  height: 100vh;
-
   display: flex;
+  grid-template-areas: 'background'
+                      'content';
+
+  grid-template-columns: 100%;
+  grid-template-rows: 100vh;
   align-items: stretch;
+  @media screen and (min-width: 1000px) {
+    display: grid;
+    grid-template-areas: 'content background';
+    grid-template-columns: 50%;
+  }
 `;
 
 export const Content = styled.div`
-  display: flex;
+  display: grid;
+  grid-area: content;
   flex-direction: column;
 
   justify-content: center;
   align-items: center;
 
   width: 100%;
-  max-width: 700px;
+  padding: 20px 0;
 `;
 
 const apperFromLeft = keyframes`
@@ -80,8 +89,15 @@ export const AnimationContainer = styled.div`
 `;
 
 export const Background = styled.div`
+  grid-area: background;
   flex: 1;
 
   background: url(${signInBackgroundImg}) no-repeat center bottom;
   background-size: cover;
+
+  display: none;
+
+  @media screen and (min-width: 1000px) {
+    display: grid;
+  }
 `;

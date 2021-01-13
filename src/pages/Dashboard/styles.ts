@@ -11,7 +11,7 @@ export const Questions = styled.div`
 
 export const Header = styled.header`
   padding: 32px 0;
-  background: #fafa;
+  background: #eee;
   -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.5);

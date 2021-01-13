@@ -3,28 +3,33 @@ import { shade } from 'polished';
 import signUpBackgroundImg from '../../assets/sign-up-background.jpg';
 
 export const Container = styled.div`
-  height: 100vh;
 
-  display: block;
+  display: flex;
+  grid-template-areas: 'background'
+                       'content';
+  
+  grid-template-columns: 100%;
+  grid-template-rows: 100vh;
+
   align-items: stretch;
-
   @media screen and (min-width: 1000px) {
-    display: flex;
+    display: grid;
+    grid-template-areas: 'background content';
+    grid-template-columns: 50%;
   }
 `;
 
 export const Content = styled.div`
-  display: flex;
+  display: grid;
+  grid-area: content;
   flex-direction: column;
 
   justify-content: center;
   align-items: center;
 
   width: 100%;
-  max-width: 700px;
-  @media screen and (min-width: 1000px) {
-    max-width: 700px;
-  }
+  padding: 20px 0;
+
 `;
 
 const apperFromRight = keyframes`
@@ -39,7 +44,6 @@ const apperFromRight = keyframes`
 `;
 
 export const AnimationContainer = styled.div`
-  overflow-y: auto;
 
   display: flex;
   flex-direction: column;
@@ -95,6 +99,7 @@ export const AnimationContainer = styled.div`
 `;
 
 export const Background = styled.div`
+  grid-area: background;
   flex: 1;
 
   background: url(${signUpBackgroundImg}) no-repeat center bottom;
@@ -103,6 +108,6 @@ export const Background = styled.div`
   display: none;
 
   @media screen and (min-width: 1000px) {
-    display: flex;
+    display: grid;
   }
 `;
